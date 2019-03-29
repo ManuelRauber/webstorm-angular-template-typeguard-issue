@@ -1,0 +1,19 @@
+<h1>Working in terms of code execution</h1>
+
+<ng-container *ngIf="isBirdByAnimal(animal)">
+  <button (click)="animal.fly()">Fly! (Animal)</button>
+</ng-container>
+
+<ng-container *ngIf="isFishByFishOrBird(fishOrBird)">
+  <button (click)="fishOrBird.swim()">Swim! (FishOrBird)</button>
+</ng-container>
+
+<h1>Not working, wrong type</h1>
+
+<ng-container *ngIf="isFishByAnimal(animal)">
+  <button (click)="animal.swim()">Swim! (Animal)</button>
+</ng-container>
+
+<ng-container *ngIf="isBirdByFishOrBird(fishOrBird)">
+  <button (click)="fishOrBird.fly()">Fly! (FishOrBird)</button>
+</ng-container>
