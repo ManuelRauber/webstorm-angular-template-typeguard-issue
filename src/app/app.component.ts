@@ -49,4 +49,16 @@ export class AppComponent {
   isBirdByFishOrBird(fishOrBird: Fish | Bird): fishOrBird is Bird {
     return fishOrBird instanceof Bird;
   }
+
+  workingSampleInTypeScript() {
+    if (this.isFishByAnimal(this.animal)) {
+      this.animal.swim();
+      this.animal.fly(); // fly does not exist on type Fish
+    }
+
+    if (this.isBirdByFishOrBird(this.fishOrBird)) {
+      this.fishOrBird.fly();
+      this.fishOrBird.swim(); // swim does not exist on type Bird
+    }
+  }
 }
